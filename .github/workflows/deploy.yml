@@ -1,38 +1,61 @@
-name: 部署VitePress
+name: GitHub Actions Build and Deploy
 
+# 触发条件: push 到 master 分支后
 on:
+  workflow_dispatch:
   push:
     branches:
-      - docs # 这段是在推送到 docs 分支时触发该命令
+      - master
+    # 只在下列路径变更时触发
+    paths:
+      - 'docs/**'
+      - 'package.json'
 
+# 设置上海时区
+env:
+  TZ: Asia/Shanghai
+
+# 任务
 jobs:
   build-and-deploy:
+    # 服务器环境：最新版 ubuntu
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      # 拉取代码
+      - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: docs # 这一步检查 docs 代码
+          persist-credentials: false
 
-      - name: Setup Node.js and pnpm
+      # 安装 pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      # 设置 node 版本
+      - name: Set node version to 18
         uses: actions/setup-node@v3
         with:
-          node-version: '20.10.0' # 设置 nodejs 的版本
-          
-      - name: Install pnpm
-        run: npm install -g pnpm # 全局安装 pnpm
+          node-version: 18
+          cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm install # 使用 pnpm 安装依赖
+      # 打包静态文件
+      - name: Build
+        run: pnpm install && pnpm run build:github
 
-      - name: Build VitePress
-        run: pnpm run docs:build # 这里是打包 vitepress 命令
+      - name: Copy files
+        run: cp README.md ./dist/
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # 部署
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          github_token: ${{ secrets.PAT_TOKEN }} # 这一步很重要，单独看下面的大步骤，主要是用来给该脚本一些仓库权限
-          publish_dir: .vitepress/dist # 指定该文件夹中的 dist 
-          publish_branch: gh-pages # 推送到关联仓库的 gh-pages 分支
-          dotfiles: true  # 包括在提交中，即使被 .gitignore 文件忽略
+          # GitHub 密钥
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # 指定仓库
+          REPOSITORY_NAME: maomao1996/mm-notes
+          # GitHub Pages 读取的分支
+          BRANCH: gh-pages
+          # 静态文件所在目录
+          FOLDER: dist
