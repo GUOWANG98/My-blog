@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@mdit-vue/shared": "^2.0.0",
+    "sass": "^1.70.0",
     "vitepress": "1.0.0-rc.39"
   },
   "scripts": {

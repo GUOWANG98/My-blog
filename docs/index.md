@@ -3,15 +3,18 @@
 layout: home
 
 hero:
-  name: "My-blog"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: Tom的个人博客
+  text: 好好学习天天向上！
+  tagline: 基于 VitePress 的个人前端导航页面模板
+  image:
+    src: /logo.png
+    alt: 背景图
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: 第一个示例
       link: /markdown-examples
     - theme: alt
-      text: API Examples
+      text: 第二个示例
       link: /api-examples
 
 features:
@@ -22,4 +25,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
