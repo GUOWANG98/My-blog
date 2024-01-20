@@ -59,7 +59,7 @@ export default {
   enhanceApp({ app, router }: EnhanceAppContext) {
     app.component('MNavLinks', MNavLinks)
 
-    app.provide('DEV', process.env.NODE_ENV === 'development')
+    // app.provide('DEV', process.env.NODE_ENV === 'development')
 
     if (typeof window !== 'undefined') {
       watch(
