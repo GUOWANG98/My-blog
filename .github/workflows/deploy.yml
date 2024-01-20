@@ -7,7 +7,7 @@ on:
   # push 到指定分支
   push:
     branches:
-      - master
+      - main
 
 # 设置权限
 permissions:
