@@ -33,7 +33,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 8.6.12
 
       # 设置 node 版本
       - name: Set node version to 18
@@ -43,8 +43,10 @@ jobs:
           cache: 'pnpm'
 
       # 打包静态文件
-      - name: Build
-        run: pnpm install && pnpm run docs:build
+      - name: Build with VitePress
+        run: |
+          pnpm install && pnpm run docs:build # 启动项目
+          touch .nojekyll  # 通知githubpages不要使用Jekyll处理这个站点，不知道为啥不生效，就手动搞了
 
       # 部署
       - name: Deploy
