@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { nav, sidebar } from './configs'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  outDir: '../../dist',
+  outDir: '../dist',
   base: "/My-blog/",
     // 打包输出目录
   title: "Tom",
