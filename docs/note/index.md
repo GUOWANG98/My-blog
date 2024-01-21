@@ -263,3 +263,162 @@ sidebar: {
       },
     },
 ```
+
+## 部署
+
+### 提交 github
+
+1.根目录新建.gitignore 文件，告诉 Git 哪些文件或目录应该被忽略，不应该被纳入版本控制
+
+```js
+node_modules
+.DS_Store
+dist
+dist-ssr
+cache
+.cache
+.temp
+*.local
+```
+
+2.在 config.mts 文件的 defineConfig 中添加内容
+
+```
+  outDir: '../dist',  //指定输出目录的路径
+  base: "/blog/",     //表示项目在部署时的根路径为blog
+```
+
+3.github 创建仓库并提交代码
+![github1](../public/github1.png)
+
+```
+//注：要做在根目录操作
+git  init
+git  add .
+git  commit -m '---'
+git remote add origin git@github.com:GUOWANG98/blog.git  // origin后面改为自己的仓库名
+git branch -M master
+git push -u origin master
+```
+
+### 将代码提交到 github 的 gh-pages 分支
+
+1. **安装 `gh-pages`**
+
+```js
+pnpm add -D gh-pages
+# OR
+npm install -D gh-pages
+```
+
+**2.在 `package.json` 中添加如下脚本**
+
+```js
+"deploy": "gh-pages -d dist -m deploy",
+"deploy:build": "npm run build && npm run deploy"
+```
+
+**3.打包并运行 `deploy` 脚本**
+
+```js
+1.第一步打包
+pnpm run  docs:build
+2.第二步运行deploy，如果失败转用npm run deploy
+pnpm deploy
+# OR
+npm run deploy
+//成功后 github 仓库上面会出现 gh-pages 分支
+```
+
+
+**4.在Settings找到Pages设置从分支部署**
+
+![github2](../public/github2.png)
+
+**5.在Settings找到Pages设置从分支部署**
+
+
+
+![github3](../public/github3.png)
+
+
+
+**6.耐心等待几秒钟链接就出来了**
+
+
+
+![github4](../public/github4.png)
+
+
+
+### 自动部署
+
+**因为上面操作比较繁琐每次要提交都得打包在运行deploy ，于是有了以下自动部署**
+
+**编写 `workflow` 文件**
+
+1. 点击仓库的 `Actions` 按钮
+2. 点击 `Set up a workflow yourself` 按钮
+3. 复制如下内容，取名为deploy.yml 提交即可
+
+```js
+name: GitHub Actions Build and Deploy
+
+# 触发条件
+on:
+  # 手动触发
+  workflow_dispatch:
+  # push 到指定分支
+  push:
+    branches:
+      - master
+
+# 设置权限
+permissions:
+  contents: write
+
+# 设置上海时区
+env:
+  TZ: Asia/Shanghai
+
+# 任务
+jobs:
+  build-and-deploy:
+    # 服务器环境：最新版 ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      # 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # 安装 pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      # 设置 node 版本
+      - name: Set node version to 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      # 打包静态文件
+      - name: Build
+        run: pnpm install && pnpm run docs:build
+
+      # 部署
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # GitHub Pages 读取的分支
+          branch: gh-pages
+          # 静态文件所在目录
+          folder: dist
+
+```
+
+**接下来每次提交代码到github就会自动部署了**
