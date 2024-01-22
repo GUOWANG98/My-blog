@@ -34,7 +34,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://tool.lu',
       },
       {
-        icon: '/icons/json-cn.ico',
+        icon: '/public/json-cn.ico',
         title: 'Json 中文网',
         desc: 'JSON 在线解析及格式化验证',
         link: 'https://www.json.cn',
@@ -45,7 +45,7 @@ export const NAV_DATA: NavData[] = [
     title: 'AI 导航',
     items: [
       {
-        icon: '/icons/chatgpt.png',
+        icon: '/public/chatgpt.png',
         title: 'ChatGPT（最强）',
         link: 'https://chat.openai.com/chat',
       },
@@ -224,8 +224,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://svelte.dev',
       },
       {
-        // icon: 'https://simpleicons.org/icons/jquery.svg',
-        icon: '/icons/jquery.svg',
+        icon: 'https://simpleicons.org/icons/jquery.svg',
         title: 'jQuery API 中文文档',
         desc: '一个兼容多浏览器的 JavaScript 框架',
         link: 'https://jquery.cuishifeng.cn',
@@ -236,19 +235,19 @@ export const NAV_DATA: NavData[] = [
     title: 'CSS 相关',
     items: [
       {
-        icon: 'https://postcss.org/assets/logo-3e39b0aa.svg',
+        icon: 'https://postcss.nodejs.cn/assets/postcss-83d93145.svg',
         title: 'PostCSS',
         desc: '一个用 JavaScript 转换 CSS 的工具',
         link: 'https://postcss.org',
       },
       {
-        icon: 'https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg',
+        icon: 'https://www.sass.hk/images/sass.png',
         title: 'Sass',
         desc: '一个成熟，稳定，功能强大的专业级 CSS 扩展语言',
         link: 'https://sass-lang.com',
       },
       {
-        icon: 'https://www.tailwindcss.cn/apple-touch-icon.png',
+        icon: '/public/tailwindcss.png',
         title: 'TailwindCSS 中文网',
         desc: '一个功能类优先的 CSS 框架',
         link: 'https://www.tailwindcss.cn',
@@ -265,7 +264,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://developers.weixin.qq.com/miniprogram/dev/framework/',
       },
       {
-        icon: '/icons/taro.svg',
+        icon: '/public/taro.svg',
         title: 'Taro',
         desc: '多端统一开发解决方案',
         link: 'https://taro.jd.com',
@@ -288,7 +287,7 @@ export const NAV_DATA: NavData[] = [
     title: 'Node 相关',
     items: [
       {
-        icon: '/icons/nodejs.svg',
+        icon: '/public/nodejs.svg',
         title: 'Node.js',
         desc: 'Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境',
         link: 'https://nodejs.org/zh-cn',
@@ -300,7 +299,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://expressjs.com',
       },
       {
-        icon: '/icons/koa.svg',
+        icon: '/public/koa.svg',
         title: 'Koa',
         desc: '基于 Node.js 平台的下一代 web 开发框架',
         link: 'https://koajs.com',
@@ -329,13 +328,13 @@ export const NAV_DATA: NavData[] = [
         link: 'https://echarts.apache.org/zh/index.html',
       },
       {
-        icon: 'https://antv.vision/icons/icon-72x72.png',
+        icon: 'https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*A-lcQbVTpjwAAAAAAAAAAAAADmJ7AQ/original',
         title: 'AntV',
         desc: '蚂蚁集团全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。',
         link: 'https://antv.vision/zh/',
       },
       {
-        icon: 'https://d3js.org/favicon.png',
+        icon: 'https://d3js.org/logo.svg',
         title: 'D3.js',
         desc: '一个遵循 Web 标准用于可视化数据的 JavaScript 库',
         link: 'https://d3js.org',
@@ -476,7 +475,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://www.runoob.com',
       },
       {
-        icon: '/icons/es6.svg',
+        icon: '/public/es6.svg',
         title: 'ES6 入门教程',
         desc: '阮一峰的网络日志',
         link: 'http://es6.ruanyifeng.com',
@@ -559,19 +558,7 @@ export const NAV_DATA: NavData[] = [
         title: 'YouTube',
         // desc: '',
         link: 'https://www.youtube.com',
-      },
-      {
-        icon: '/icons/twitter.svg',
-        title: 'Twitter',
-        // desc: '',
-        link: 'https://twitter.com',
-      },
-      {
-        icon: '/icons/pixiv.png',
-        title: 'Pixiv',
-        // desc: '',
-        link: 'https://www.pixiv.net',
-      },
+      }
     ],
   },
 ]

@@ -41,36 +41,36 @@ export default defineConfig({
     nav,
     sidebar: {
       // 当用户在 `map` 目录页面下将会展示这个侧边栏，没有写就不展示
-      '/map/': [
-        {
-          text: 'JavaScript 基础知识',
+      // '/note/': [
+      //   {
+      //     text: 'JavaScript 基础知识',
           
-          items: [
-            // This shows `/guide/index.md` page.
-            { text: 'Index', link: '/guide/' }, // /guide/index.md
-            { text: 'One', link: '/guide/one' }, // /guide/one.md
-            { text: 'Two', link: '/guide/two' } // /guide/two.md
-          ]
-        },
-        {
-          text: 'JavaScript 基础知识',
-          items: [
-            // This shows `/guide/index.md` page.
-            { text: 'Index', link: '/guide/' }, // /guide/index.md
-            { text: 'One', link: '/guide/one' }, // /guide/one.md
-            { text: 'Two', link: '/guide/two' } // /guide/two.md
-          ]
-        },
-        {
-          text: 'JavaScript 基础知识',
-          items: [
-            // This shows `/guide/index.md` page.
-            { text: 'Index', link: '/guide/' }, // /guide/index.md
-            { text: 'One', link: '/guide/one' }, // /guide/one.md
-            { text: 'Two', link: '/guide/two' } // /guide/two.md
-          ]
-        }
-      ],
+      //     items: [
+      //       // This shows `/guide/index.md` page.
+      //       { text: 'Index', link: '/guide/' }, // /guide/index.md
+      //       { text: 'One', link: '/guide/one' }, // /guide/one.md
+      //       { text: 'Two', link: '/guide/two' } // /guide/two.md
+      //     ]
+      //   },
+      //   {
+      //     text: 'JavaScript 基础知识',
+      //     items: [
+      //       // This shows `/guide/index.md` page.
+      //       { text: 'Index', link: '/guide/' }, // /guide/index.md
+      //       { text: 'One', link: '/guide/one' }, // /guide/one.md
+      //       { text: 'Two', link: '/guide/two' } // /guide/two.md
+      //     ]
+      //   },
+      //   {
+      //     text: 'JavaScript 基础知识',
+      //     items: [
+      //       // This shows `/guide/index.md` page.
+      //       { text: 'Index', link: '/guide/' }, // /guide/index.md
+      //       { text: 'One', link: '/guide/one' }, // /guide/one.md
+      //       { text: 'Two', link: '/guide/two' } // /guide/two.md
+      //     ]
+      //   }
+      // ],
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/GUOWANG98' }

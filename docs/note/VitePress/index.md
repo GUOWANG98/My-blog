@@ -27,7 +27,7 @@ pnpm vitepress init
 5. 是否使用 ts，我们个人学习就没必要 ts 了，主要还是我懒
 6. 是否添加脚本到 package.json，这个还是需要的，启动命令，打包命令这些都得用
 
-![start](../public/start.png)
+![start](../../public/start.png)
 
 初始化成功后，使用 vscode 打开文件夹，会看到这样一个目录。接下来简单介绍一下每个文件的含义
 
@@ -39,7 +39,7 @@ pnpm vitepress init
 - index.md。主页相关
 - package.json 和 pnpm-lock.yml。包管理工具需要用的
 
-![demo](../public/demo.png)
+![demo](../../public/demo.png)
 
 **启动项目**
 
@@ -49,7 +49,7 @@ pnpm run docs:dev
 
 打开，看到这个，说明初始化成功
 
-![home](../public/home.png)
+![home](../../public/home.png)
 
 ## 自定义
 
@@ -57,7 +57,7 @@ pnpm run docs:dev
 
 对于主页，我们自定义的内容有哪些？如下图，9 个地方可以自定义。接下来就一一叙述这 9 个地方怎么自定义的。
 
-![home1](../public/home1.png)
+![home1](../../public/home1.png)
 
 1、7、8、9 这三个配置是在 config.mjs 中配置的
 
@@ -134,7 +134,7 @@ features:
 ```
 
 修改后的页面如下：
-![home3](../public/home3.png)
+![home3](../../public/home3.png)
 
 ### 主页扩展
 
@@ -174,13 +174,13 @@ features:
 
 最后美化的效果如图：
 
-![home4](../public/home4.png)
+![home4](../../public/home4.png)
 
 ### icon 设置
 
 美化地址栏 icon
 
-![home5](../public/home5.png)
+![home5](../../public/home5.png)
 
 在`config.mjs defineConfig`下面直接配置即可
 
@@ -189,7 +189,7 @@ head:[['link',{rel:'icon',href:'fox.png'}]],
 ```
 
 美化 title icon
-![home6](../public/home6.png)
+![home6](../../public/home6.png)
 
 在`index.md`下面直接配置即可
 
@@ -289,7 +289,7 @@ cache
 ```
 
 3.github 创建仓库并提交代码
-![github1](../public/github1.png)
+![github1](../../public/github1.png)
 
 ```
 //注：要做在根目录操作
@@ -330,36 +330,27 @@ npm run deploy
 //成功后 github 仓库上面会出现 gh-pages 分支
 ```
 
+**4.在 Settings 找到 Pages 设置从分支部署**
 
-**4.在Settings找到Pages设置从分支部署**
+![github2](../../public/github2.png)
 
-![github2](../public/github2.png)
+**5.在 Settings 找到 Pages 设置从分支部署**
 
-**5.在Settings找到Pages设置从分支部署**
-
-
-
-![github3](../public/github3.png)
-
-
+![github3](../../public/github3.png)
 
 **6.耐心等待几秒钟链接就出来了**
 
-
-
-![github4](../public/github4.png)
-
-
+![github4](../../public/github4.png)
 
 ### 自动部署
 
-**因为上面操作比较繁琐每次要提交都得打包在运行deploy ，于是有了以下自动部署**
+**因为上面操作比较繁琐每次要提交都得打包在运行 deploy ，于是有了以下自动部署**
 
 **编写 `workflow` 文件**
 
 1. 点击仓库的 `Actions` 按钮
 2. 点击 `Set up a workflow yourself` 按钮
-3. 复制如下内容，取名为deploy.yml 提交即可
+3. 复制如下内容，取名为 deploy.yml 提交即可
 
 ```js
 name: GitHub Actions Build and Deploy
@@ -421,4 +412,4 @@ jobs:
 
 ```
 
-**接下来每次提交代码到github就会自动部署了**
+**接下来每次提交代码到 github 就会自动部署了**
