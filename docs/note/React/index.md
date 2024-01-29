@@ -565,12 +565,6 @@ class UncontrolledInput extends React.Component {
 
 **受控组件和非受控组件的优缺点**
 
-                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
-
-原文链接：https://blog.csdn.net/tyxjolin/article/details/129748393
-
-**受控组件的优点**
-
 - 容易进行验证和处理：由于组件的值由React状态控制，因此您可以轻松地验证和处理组件的值。例如，您可以使用`onChange`事件来验证组件的值是否满足特定的条件，并更新React状态以反映验证结果。
 
 - 有更好的可预测性：由于组件的值由React状态控制，因此组件的行为更容易预测。例如，当组件的值发生变化时，它将始终更新React状态并重新渲染，这使得应用程序更加可预测。
@@ -625,11 +619,11 @@ React严格模式是一种开发模式，它可以帮助开发者在开发过程
 两种常用 Router : HashRouter 和 BrowserRouter
 
 **2.HashRouter**
-使用 URL 的哈希值实现（http://localhost:3000/#/first）
+使用 URL 的哈希值实现  localhost:3000/#/first
 
 BrowserRouter ( 推荐 )
 
-使用 H5 的 history.pushState API 实现（http://localhost:3000/first）
+使用 H5 的 history.pushState API 实现  localhost:3000/first
 
 ### 第一步：安装
 
