@@ -410,12 +410,12 @@ export const NAV_DATA: NavData[] = [
         desc: '一个现代化的轻量级静态站点生成器',
         link: 'https://astro.build',
       },
-      {
-        icon: 'https://cn.vuejs.org/logo.svg',
-        title: 'VitePress',
-        desc: '由 Vite 和 Vue 驱动的静态网站生成器',
-        link: 'https://vitepress.dev',
-      },
+      // {
+      //   icon: 'https://cn.vuejs.org/logo.svg',
+      //   title: 'VitePress',
+      //   desc: '由 Vite 和 Vue 驱动的静态网站生成器',
+      //   link: 'https://vitepress.dev',
+      // },
       {
         icon: 'https://cn.vuejs.org/logo.svg',
         title: 'VuePress',
