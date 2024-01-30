@@ -15,9 +15,8 @@ export const nav: DefaultTheme.Config['nav'] = [
     ]
    }
   ]},
-  { text: '文章', items:[{text:'111',link:'/docs/'},{text:'222',link:'/docs/'}] },
+  // { text: '文章', items:[{text:'111',link:'/docs/'},{text:'222',link:'/docs/'}] },
   {
-    text: '油猴脚本',
-    link: 'https://github.com/maomao1996/tampermonkey-scripts',
+    text: '关于',link: '/about/'
   },
 ]

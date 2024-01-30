@@ -4,18 +4,18 @@ layout: home
 
 hero:
   name: Tom的个人博客
-  text: 好好学习天天向上！
+  # text: 个人博客！
   tagline: 基于 VitePress 的个人前端导航页面模板
   image:
     src: /logo.png
     alt: 背景图
   actions:
     - theme: brand
-      text: 第一个示例
-      link: /markdown-examples
+      text: 博客搭建
+      link: /note/VitePress/
     - theme: alt
-      text: 第二个示例
-      link: /api-examples
+      text: 关于我
+      link: /about/
 
 features:
   - title: Feature A
