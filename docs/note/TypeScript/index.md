@@ -1,7 +1,7 @@
 ---
 prev:
   text: 'Uni-App基础入门'
-  link: '/note/Uni-App/'
+  link: '/note/uni-app/'
 ---
 
 # TypeScript 基础入门

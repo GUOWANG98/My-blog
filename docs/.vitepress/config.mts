@@ -49,7 +49,7 @@ export default defineConfig({
           items: [
             { text: 'Vue基础入门', link: '/note/Vue/' },
             { text: 'React基础入门', link: '/note/React/' },
-            { text: 'Uni-App基础入门', link: '/note/Uni-App/' },
+            { text: 'Uni-App基础入门', link: '/note/uni-app/' },
           ]
         },
         {

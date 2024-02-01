@@ -4,7 +4,7 @@ prev:
   link: '/note/Vue/'
 next:
   text: 'Uni-App基础入门'
-  link: '/note/Uni-App/'
+  link: '/note/uni-app/'
 ---
 
 # React 入门笔记
