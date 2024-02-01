@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wang">
         <div>
             <h3>博客内容</h3>
             <div class="bgc">主要内容是前端常用网站汇总与技术笔记整理等,后续有新想法将持续更新</div>

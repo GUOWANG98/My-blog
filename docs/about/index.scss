@@ -1,0 +1,31 @@
+.VPHome {
+    .wang {
+        padding: 0 15%;
+        @media(max-width:960px) {
+            padding: 0 12%;
+        }
+        h3 {
+            font-size: 28px;
+            font-weight: 500;
+            margin: 24px 0;
+        }
+        .bgc {
+            padding: 1rem 1.5rem;
+            background: linear-gradient(145deg, rgb(230, 230, 230), rgb(255, 255, 255));
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            p {
+                i {
+                display: inline-block;
+                margin-bottom: 2px;
+                margin-right: 8px;
+                width: 7px;
+                height: 7px;
+                background: #777;
+                border-radius: 50%;
+                }
+            }
+        }
+    } 
+}
+ 
