@@ -18,10 +18,17 @@ hero:
       link: /about/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: ✍
+    title: Vue
+    details: vue基础以及vue3的入门学习笔记整理
+    link: /note/Vue/
+    linkText: 入门笔记
+  - icon: 🐞
+    title: React
+    details: React18笔记整理
+    link: /pit/npm
+    linkText: 入门笔记
+  - icon: 🥇
+    title: <br />面对疾风吧！🌪🌪🌪🌪🌪
+    link: /about/
 ---

@@ -1,13 +1,12 @@
 ---
-layoutClass: m-nav-layout
-# outline: [2, 3, 4]
+next:
+  text: 'Vue基础入门'
+  link: '/note/Vue/'
 ---
 
-<style src="../index.scss"></style>
+# VitePress 打造个人博客
 
-# 前言
-
-VitePress 是一个基于 Vue.js 和 Vite 构建的静态网站生成器，专注于快速搭建文档和技术博客！
+VitePress 是一个基于 Vue.js 和 Vite 构建的静态网站生成器，专注于快速搭建文档和技术博客！[点击进入官网](https://vitepress.dev/zh/)
 
 ## 创建项目
 

@@ -1,11 +1,13 @@
 ---
-layoutClass: m-nav-layout
-outline: [2, 3, 4]
+prev:
+  text: 'Vue基础入门'
+  link: '/note/Vue/'
+next:
+  text: 'Uni-App基础入门'
+  link: '/note/Uni-App/'
 ---
 
-<style src="../index.scss"></style>
-
-# React 简介
+# React 入门笔记
 
 ## 1.什么是 React
 
@@ -488,19 +490,19 @@ export class App extends PureComponent {
 
 ```html
 // 如果一个组件不想外层多一个div包着就用这玩意包裹一下
-<Fragment >
-        <h2>我是标题</h2>
-        <p>我是内容</p>
-  </Fragment>
+<Fragment>
+  <h2>我是标题</h2>
+  <p>我是内容</p>
+</Fragment>
 ```
 
 ### 8.受控组件和非受控组件
 
 **受控组件**
 
-React受控组件是一种由React状态控制的组件。在受控组件中，组件的值由React状态管理。React状态是一个存储组件数据的JavaScript对象，可以随时更新。当组件的值发生变化时，React状态将更新，组件将重新渲染以反映新值。
+React 受控组件是一种由 React 状态控制的组件。在受控组件中，组件的值由 React 状态管理。React 状态是一个存储组件数据的 JavaScript 对象，可以随时更新。当组件的值发生变化时，React 状态将更新，组件将重新渲染以反映新值。
 
-例如，下面是一个简单的受控组件，它是一个文本框，它的值由React状态管理：
+例如，下面是一个简单的受控组件，它是一个文本框，它的值由 React 状态管理：
 
 ```jsx
 class ControlledInput extends React.Component {
@@ -508,11 +510,11 @@ class ControlledInput extends React.Component {
     super(props);
     this.state = { value: '' };
   }
- 
+
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
- 
+
   render() {
     return (
       <input
@@ -525,13 +527,13 @@ class ControlledInput extends React.Component {
 }
 ```
 
-在上面的代码中，我们创建了一个受控组件ControlledInput。该组件包含一个文本框，它的值由React状态value管理。我们还定义了一个handleChange函数，它在文本框的值发生变化时被调用，并更新React状态value。最后，我们在文本框的value属性中绑定了React状态value，这意味着文本框的值将始终与React状态value保持同步。
+在上面的代码中，我们创建了一个受控组件 ControlledInput。该组件包含一个文本框，它的值由 React 状态 value 管理。我们还定义了一个 handleChange 函数，它在文本框的值发生变化时被调用，并更新 React 状态 value。最后，我们在文本框的 value 属性中绑定了 React 状态 value，这意味着文本框的值将始终与 React 状态 value 保持同步。
 
 **非受控组件**
 
-React非受控组件是一种不由React状态控制的组件。在非受控组件中，组件的值不由React状态管理。相反，组件的值由DOM节点直接管理。
+React 非受控组件是一种不由 React 状态控制的组件。在非受控组件中，组件的值不由 React 状态管理。相反，组件的值由 DOM 节点直接管理。
 
-例如，下面是一个简单的非受控组件，它是一个文本框，它的值不由React状态管理：
+例如，下面是一个简单的非受控组件，它是一个文本框，它的值不由 React 状态管理：
 
 ```jsx
 class UncontrolledInput extends React.Component {
@@ -539,11 +541,11 @@ class UncontrolledInput extends React.Component {
     super(props);
     this.inputRef = React.createRef();
   }
- 
+
   handleClick() {
     console.log('Input value:', this.inputRef.current.value);
   }
- 
+
   render() {
     return (
       <div>
@@ -555,42 +557,42 @@ class UncontrolledInput extends React.Component {
 }
 ```
 
-在上面的代码中，我们创建了一个非受控组件`UncontrolledInput`。该组件包含一个文本框，它的值不由React状态管理。相反，我们使用`React.createRef()`方法创建了一个名为`inputRef`的引用。然后，我们将该引用传递给文本框的`ref`属性，这意味着我们可以使用`inputRef.current.value`获取文本框的当前值。最后，我们定义了一个`handleClick`函数，它在点击按钮时被调用，并输出文本框的值。
+在上面的代码中，我们创建了一个非受控组件`UncontrolledInput`。该组件包含一个文本框，它的值不由 React 状态管理。相反，我们使用`React.createRef()`方法创建了一个名为`inputRef`的引用。然后，我们将该引用传递给文本框的`ref`属性，这意味着我们可以使用`inputRef.current.value`获取文本框的当前值。最后，我们定义了一个`handleClick`函数，它在点击按钮时被调用，并输出文本框的值。
 
 **区别**
 
-- React受控组件和非受控组件之间的最大区别是组件的值是由React状态控制还是由DOM节点控制。
-- 在受控组件中，组件的值由React状态控制。这意味着当组件的值发生变化时，React状态将更新，组件将重新渲染以反映新值。另外，您可以使用React状态控制组件的值进行验证和处理。
-- 在非受控组件中，组件的值由DOM节点控制。这意味着当组件的值发生变化时，它将直接反映在DOM节点上，而不会更新React状态。这使得非受控组件可以更快地更新，但也使得验证和处理组件的值更加困难。
+- React 受控组件和非受控组件之间的最大区别是组件的值是由 React 状态控制还是由 DOM 节点控制。
+- 在受控组件中，组件的值由 React 状态控制。这意味着当组件的值发生变化时，React 状态将更新，组件将重新渲染以反映新值。另外，您可以使用 React 状态控制组件的值进行验证和处理。
+- 在非受控组件中，组件的值由 DOM 节点控制。这意味着当组件的值发生变化时，它将直接反映在 DOM 节点上，而不会更新 React 状态。这使得非受控组件可以更快地更新，但也使得验证和处理组件的值更加困难。
 
 **受控组件和非受控组件的优缺点**
 
-- 容易进行验证和处理：由于组件的值由React状态控制，因此您可以轻松地验证和处理组件的值。例如，您可以使用`onChange`事件来验证组件的值是否满足特定的条件，并更新React状态以反映验证结果。
+- 容易进行验证和处理：由于组件的值由 React 状态控制，因此您可以轻松地验证和处理组件的值。例如，您可以使用`onChange`事件来验证组件的值是否满足特定的条件，并更新 React 状态以反映验证结果。
 
-- 有更好的可预测性：由于组件的值由React状态控制，因此组件的行为更容易预测。例如，当组件的值发生变化时，它将始终更新React状态并重新渲染，这使得应用程序更加可预测。
+- 有更好的可预测性：由于组件的值由 React 状态控制，因此组件的行为更容易预测。例如，当组件的值发生变化时，它将始终更新 React 状态并重新渲染，这使得应用程序更加可预测。
 
 **受控组件的缺点**
-更多的代码：由于组件的值由React状态控制，因此需要编写更多的代码来管理组件的值。这可能会导致代码更难以维护和理解。
+更多的代码：由于组件的值由 React 状态控制，因此需要编写更多的代码来管理组件的值。这可能会导致代码更难以维护和理解。
 
-性能问题：由于每次组件的值发生变化时，它都会更新React状态并重新渲染，这可能会影响性能。如果您在处理大量数据时使用受控组件，则可能会遇到性能问题。
+性能问题：由于每次组件的值发生变化时，它都会更新 React 状态并重新渲染，这可能会影响性能。如果您在处理大量数据时使用受控组件，则可能会遇到性能问题。
 
 **非受控组件的优点**
-更快的更新：由于组件的值由DOM节点控制，因此非受控组件可以更快地更新。这使得非受控组件适用于需要高速更新的场景，例如实时搜索框。
+更快的更新：由于组件的值由 DOM 节点控制，因此非受控组件可以更快地更新。这使得非受控组件适用于需要高速更新的场景，例如实时搜索框。
 
-更少的代码：由于组件的值不由React状态控制，因此需要编写更少的代码来管理组件的值。这使得代码更易于维护和理解。
+更少的代码：由于组件的值不由 React 状态控制，因此需要编写更少的代码来管理组件的值。这使得代码更易于维护和理解。
 
 **非受控组件的缺点**
-难以进行验证和处理：由于组件的值不由React状态控制，因此难以对其进行验证和处理。例如，如果您需要确保组件的值满足特定条件，则必须使用DOM节点来验证组件的值，并且必须手动更新组件的值。
+难以进行验证和处理：由于组件的值不由 React 状态控制，因此难以对其进行验证和处理。例如，如果您需要确保组件的值满足特定条件，则必须使用 DOM 节点来验证组件的值，并且必须手动更新组件的值。
 
-更少的可预测性：由于组件的值由DOM节点控制，因此组件的行为更难以预测。例如，当组件的值发生变化时，它不会更新React状态并重新渲染，这可能会导致应用程序的行为更加不可预测。
+更少的可预测性：由于组件的值由 DOM 节点控制，因此组件的行为更难以预测。例如，当组件的值发生变化时，它不会更新 React 状态并重新渲染，这可能会导致应用程序的行为更加不可预测。
 
 何时使用受控组件和非受控组件
-React受控组件和非受控组件都有各自的用途。以下是它们的主要应用场景：
+React 受控组件和非受控组件都有各自的用途。以下是它们的主要应用场景：
 
 **受控组件的应用场景**
-当需要对组件的值进行验证和处理时，应使用受控组件。例如，当您需要确保文本框的值仅包含数字时，您可以使用受控组件来验证文本框的值，并更新React状态以反映验证结果。
+当需要对组件的值进行验证和处理时，应使用受控组件。例如，当您需要确保文本框的值仅包含数字时，您可以使用受控组件来验证文本框的值，并更新 React 状态以反映验证结果。
 
-当需要确保组件的值与应用程序的状态同步时，应使用受控组件。例如，当您需要确保文本框的值与应用程序的状态同步时，您可以使用受控组件来更新React状态，并确保组件的值与应用程序的状态同步。
+当需要确保组件的值与应用程序的状态同步时，应使用受控组件。例如，当您需要确保文本框的值与应用程序的状态同步时，您可以使用受控组件来更新 React 状态，并确保组件的值与应用程序的状态同步。
 
 **非受控组件的应用场景**
 当需要高速更新组件的值时，应使用非受控组件。例如，当您需要实现实时搜索框时，您可以使用非受控组件来快速更新文本框的值，并更新搜索结果。
@@ -599,12 +601,12 @@ React受控组件和非受控组件都有各自的用途。以下是它们的主
 
 ### 9.严格模式
 
-React严格模式是一种开发模式，它可以帮助开发者在开发过程中发现一些潜在的问题，并提供更好的错误提示。要在React应用中启用严格模式，可以在应用的根组件中添加`<React.StrictMode>`标签。
+React 严格模式是一种开发模式，它可以帮助开发者在开发过程中发现一些潜在的问题，并提供更好的错误提示。要在 React 应用中启用严格模式，可以在应用的根组件中添加`<React.StrictMode>`标签。
 
-严格模式下，React会进行一些额外的检查和警告，包括：
+严格模式下，React 会进行一些额外的检查和警告，包括：
 
 1. 检测过时的生命周期方法
-2. 检测过时的API使用
+2. 检测过时的 API 使用
 3. 检测不安全的生命周期方法
 4. 检测意外的副作用
 
@@ -619,15 +621,15 @@ React严格模式是一种开发模式，它可以帮助开发者在开发过程
 两种常用 Router : HashRouter 和 BrowserRouter
 
 **2.HashRouter**
-使用 URL 的哈希值实现  localhost:3000/#/first
+使用 URL 的哈希值实现 localhost:3000/#/first
 
 BrowserRouter ( 推荐 )
 
-使用 H5 的 history.pushState API 实现  localhost:3000/first
+使用 H5 的 history.pushState API 实现 localhost:3000/first
 
 ### 第一步：安装
 
-react-router-dom是浏览器端的基于react-router库的库，所以装了这个以后就不用再手动装react-router了
+react-router-dom 是浏览器端的基于 react-router 库的库，所以装了这个以后就不用再手动装 react-router 了
 
 ```bash
 npm install react-router-dom
@@ -635,7 +637,7 @@ npm install react-router-dom
 
 ### 第二步：连接路由
 
-连接你的App到浏览器的URL。用BrowserRouter包裹在你的App的外面
+连接你的 App 到浏览器的 URL。用 BrowserRouter 包裹在你的 App 的外面
 
 ```jsx
 // main.jsx
@@ -643,11 +645,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<BrowserRouter>
-		<App />
-	</BrowserRouter>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
 );
-
 ```
 
 ### 第三步：路由表配置
@@ -664,22 +665,22 @@ import Chat from '../views/Chat';
 
 const routes = [
   // Navigate 重定向
-	{ path: '/', element: <Navigate to='/home' /> },
-	{ path: '/home', element: <Home /> },
-	{
-		path: '/friend',
-		element: <Friend />,
-		children: [{ path: 'chat/:name', element: <Chat /> }],
-	},
-	{ path: '/setting', element: <Setting /> },
-	{ path: '*', element: <NotFound /> },
+  { path: '/', element: <Navigate to="/home" /> },
+  { path: '/home', element: <Home /> },
+  {
+    path: '/friend',
+    element: <Friend />,
+    children: [{ path: 'chat/:name', element: <Chat /> }],
+  },
+  { path: '/setting', element: <Setting /> },
+  { path: '*', element: <NotFound /> },
 ];
 export default routes;
 ```
 
 ### 路由跳转
 
-路由配置好后免不了要进行页面跳转，但新版的react-router移除了history对象，故不能使用v5版本的history（包括`useHistory` hook）已不能使用，我们可以使用以下两中方式进行跳转
+路由配置好后免不了要进行页面跳转，但新版的 react-router 移除了 history 对象，故不能使用 v5 版本的 history（包括`useHistory` hook）已不能使用，我们可以使用以下两中方式进行跳转
 
 - 使用`<Link>`或`<NavLink>`进行跳转 这种方式与上一个版本几乎没有太大的区别，唯一的区别是`<NavLink>`组件的高亮写法发生了变化（使用`style`或`className`**回调函数**的方式实现高亮，用法如下）
 
@@ -696,7 +697,7 @@ export default routes;
 
 **编程式导航**
 
-使用`useNavigate()`进行跳转 有时候我们并不能使用以上两个组件进行跳转，如根据ajax请求返回值跳转不同的页面，这时我们就得使用js的方式时行跳转了，虽然新版的react-router已经移除掉history对象，但给我们提供了 `useNavigate()` hook实现路由跳转，使用方法如下
+使用`useNavigate()`进行跳转 有时候我们并不能使用以上两个组件进行跳转，如根据 ajax 请求返回值跳转不同的页面，这时我们就得使用 js 的方式时行跳转了，虽然新版的 react-router 已经移除掉 history 对象，但给我们提供了 `useNavigate()` hook 实现路由跳转，使用方法如下
 
 ```jsx
 import {  useNavigate } from "react-router-dom";
@@ -721,81 +722,75 @@ navigate("/child", { state: { id, title },replace: true});
 
 ### 路由传参
 
-我们都知道，在进行路由跳转时，可以通过附带一些参数一起传递到目标页面来实现某些特殊功能，但新版的react-router已经从props中移除了`history`、`location`、`match`，也移除掉了`withRouter`高阶组件，所以无法使用老版本的方式传参与接收，新版用法如下
+我们都知道，在进行路由跳转时，可以通过附带一些参数一起传递到目标页面来实现某些特殊功能，但新版的 react-router 已经从 props 中移除了`history`、`location`、`match`，也移除掉了`withRouter`高阶组件，所以无法使用老版本的方式传参与接收，新版用法如下
 
-- **search传参**
+- **search 传参**
 
 ```jsx
-    let navigate = useNavigate();
-    navigate(`/home?page=1&size=10`);
-    navigate({
-        pathname:'/home',
-        search:'page=1&size=10'
-    });
+let navigate = useNavigate();
+navigate(`/home?page=1&size=10`);
+navigate({
+  pathname: '/home',
+  search: 'page=1&size=10',
+});
 ```
 
-在对应组件接收参数也很简单，使用`useSearchParams` hook进行接收，得到URLSearchParams对象以及设置search参数函数组成的数据
+在对应组件接收参数也很简单，使用`useSearchParams` hook 进行接收，得到 URLSearchParams 对象以及设置 search 参数函数组成的数据
 
 ```jsx
-    function Home(){
-        const [searchParams,setSearchParams] = useSearchParams()
-        searchParams.get('page');//1
-        searchParams.get('size');//10
-        return (
-            <div>首页</div>
-        )
-    }
+function Home() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  searchParams.get('page'); //1
+  searchParams.get('size'); //10
+  return <div>首页</div>;
+}
 ```
 
 - **动态路由传参**
 
 ```jsx
-    <Route path="/user" element={<User/>}>
-        <Route path=":/id" element={<UserDetail/>} />
-    </Route>
+<Route path="/user" element={<User />}>
+  <Route path=":/id" element={<UserDetail />} />
+</Route>
 ```
 
-配置完以上路由后，当页面跳转到`/user/123`这个路径时，可以在`<UserDetail/>`组件中使用`useParams` hook获取`123`这个id
+配置完以上路由后，当页面跳转到`/user/123`这个路径时，可以在`<UserDetail/>`组件中使用`useParams` hook 获取`123`这个 id
 
 ```jsx
-function UserDetail(){
-        const {id} = useParams()
-        return (
-            <div>id:{id}</div>
-        )
- }
+function UserDetail() {
+  const { id } = useParams();
+  return <div>id:{id}</div>;
+}
 ```
 
-- **state传参 通过`<Link/>`、`<NavLink/>`或 `useNavigate`进行跳转时，都可以传递state参数，用法如下:**
+- **state 传参 通过`<Link/>`、`<NavLink/>`或 `useNavigate`进行跳转时，都可以传递 state 参数，用法如下:**
 
 ```
     <Link to="/home" state={{idx:1,key:'qf'}}>首页</Link>
     navigate('/home',{state:{idx:1,key:'qf'}})
 ```
 
-在首页组件中通过`useLocation` hook获取state值
+在首页组件中通过`useLocation` hook 获取 state 值
 
 ```jsx
-    function Home(){
-        const {state} = useLocation();
-        state.idx; 
-        state.key; 
-        return (
-            <div>首页</div>
-        )
-    }
+function Home() {
+  const { state } = useLocation();
+  state.idx;
+  state.key;
+  return <div>首页</div>;
+}
 ```
 
 ### 路由懒加载
 
-- React利用 React.lazy与import()实现了渲染时的动态加载
-- 利用Suspense来处理异步加载资源时页面应该如何显示的问题
-- 通过lazy() api来动态import需要懒加载的组件
-- import的组件目前只支持export default的形式导出
-- Suspense来包裹懒加载的组件进行加载，可以设置fallback现实加载中效果
-- React.lazy可以结合Router来对模块进行懒加载。
+- React 利用 React.lazy 与 import()实现了渲染时的动态加载
+- 利用 Suspense 来处理异步加载资源时页面应该如何显示的问题
+- 通过 lazy() api 来动态 import 需要懒加载的组件
+- import 的组件目前只支持 export default 的形式导出
+- Suspense 来包裹懒加载的组件进行加载，可以设置 fallback 现实加载中效果
+- React.lazy 可以结合 Router 来对模块进行懒加载。
 
-`React.suspense`用来实现懒加载路由时的loading兜底
+`React.suspense`用来实现懒加载路由时的 loading 兜底
 
 ```jsx
 <Suspense fallback={<Loading />}>
@@ -803,16 +798,16 @@ function UserDetail(){
 </Suspense>
 ```
 
-- fallback参数中可以传入react组件或dom元素，例如：<div>Loading...</div>
+- fallback 参数中可以传入 react 组件或 dom 元素，例如：<div>Loading...</div>
 
-- 注意：React.suspense不只是针对于懒加载的路由，而针对所有懒加载的组件，只要是存在懒加载的，都可以通过在外成包裹 React.suspense来实现loading或其他占位dom
-  React.lazy用来包装组件路径，实现路由懒加载
+- 注意：React.suspense 不只是针对于懒加载的路由，而针对所有懒加载的组件，只要是存在懒加载的，都可以通过在外成包裹 React.suspense 来实现 loading 或其他占位 dom
+  React.lazy 用来包装组件路径，实现路由懒加载
 
 - `React.lazy`用来包装组件路径，实现路由懒加载
 
   ```jsx
-  const Home = React.lazy(() => import('../pages/Home'))
-  const Login = React.lazy(() => import('../pages/Login'))
+  const Home = React.lazy(() => import('../pages/Home'));
+  const Login = React.lazy(() => import('../pages/Login'));
   ```
 
 ## React 生命周期
@@ -879,7 +874,7 @@ Hooks，可以翻译成钩子。
 
 在类组件中钩子函数就是生命周期函数，Hooks 主要用在函数组件。
 
-在 react 中定义组件有2种方式：class 定义的类组件和 function 定义的函数组件。
+在 react 中定义组件有 2 种方式：class 定义的类组件和 function 定义的函数组件。
 
 在类组件中，钩子函数可以给组件增加额外的功能。
 
@@ -901,28 +896,28 @@ class 组件中的 this 指向问题
 5. useState 的参数也可以是一个函数，这个函数的返回值就是我们的初始状态。
 
 ```jsx
-import { memo, useState } from 'react'
+import { memo, useState } from 'react';
 // 普通函数不能使用hook，除非是use开头
 // 在自定义hooks中，可以使用react提供的其他hooks：必须使用use开头，
 function useWang() {
-  const [message] = useState('Hello')
-  return message
+  const [message] = useState('Hello');
+  return message;
 }
 
 function CounterHook(props) {
-  //useState是一个函数里面只有一个值不设置就是undefined 
+  //useState是一个函数里面只有一个值不设置就是undefined
   //返回的是一个数组 第一个参数是当前状态的值第二个参数设置状态值的参数
-  const [counter, setcounter] = useState(0)
-  const message =  useWang()
+  const [counter, setcounter] = useState(0);
+  const message = useWang();
   return (
     <div>
       <h2>当前计数：{counter}</h2>
       <button onClick={(e) => setcounter(counter + 1)}>+1</button>
       <button onClick={(e) => setcounter(counter - 1)}>-1</button>
     </div>
-  )
+  );
 }
-export default memo(CounterHook)
+export default memo(CounterHook);
 ```
 
 ### 2.useEffect
@@ -935,22 +930,22 @@ useEffect(() => {}) 这种写法代表两个生命周期函数 componentDidMount
 useEffect(() => {}, []) 这种写法代表生命周期函数 componentDidMount。
 useEffect(() => () => {}) 这种写法代表组件卸载之前 componentWillUnmount 和 componentDidUpdate 两个生命周期函数。
 
-1. 无依赖数组：`useEffect(callback)` 这种写法表示这个effect在每次组件更新时都会执行。无论组件的props或state是否发生变化，都会触发这个effect。这种写法通常用于需要在组件更新时执行的副作用操作，比如数据获取、订阅等。
-2. 空依赖数组：`useEffect(callback, [])` 传入空数组作为`useEffect`的第二个参数表示这个effect不依赖于任何props或state。这意味着这个effect只会在组件挂载后执行一次，类似于类组件中的`componentDidMount`生命周期钩子。这种写法通常用于只需要在组件挂载后执行一次的副作用操作。
-3. 有依赖数组：`useEffect(callback, [dep1, dep2, ...])` 如果你传入一个非空数组作为`useEffect`的第二个参数，这表示这个effect依赖于数组中的变量。当数组中的任何一个变量发生变化时，都会触发这个effect。这种写法通常用于需要根据特定的props或state变化执行副作用操作的情况。
-4. 返回清除函数：`useEffect(() => { return () => { /* 清除操作 */ }，[]})` 如果在`useEffect`的回调函数中返回了一个函数，那么这个函数会在组件卸载或者下一次effect执行前执行，用于清除之前的副作用操作。这种写法适用于需要进行清除操作的副作用，比如订阅、定时器等。
+1. 无依赖数组：`useEffect(callback)` 这种写法表示这个 effect 在每次组件更新时都会执行。无论组件的 props 或 state 是否发生变化，都会触发这个 effect。这种写法通常用于需要在组件更新时执行的副作用操作，比如数据获取、订阅等。
+2. 空依赖数组：`useEffect(callback, [])` 传入空数组作为`useEffect`的第二个参数表示这个 effect 不依赖于任何 props 或 state。这意味着这个 effect 只会在组件挂载后执行一次，类似于类组件中的`componentDidMount`生命周期钩子。这种写法通常用于只需要在组件挂载后执行一次的副作用操作。
+3. 有依赖数组：`useEffect(callback, [dep1, dep2, ...])` 如果你传入一个非空数组作为`useEffect`的第二个参数，这表示这个 effect 依赖于数组中的变量。当数组中的任何一个变量发生变化时，都会触发这个 effect。这种写法通常用于需要根据特定的 props 或 state 变化执行副作用操作的情况。
+4. 返回清除函数：`useEffect(() => { return () => { /* 清除操作 */ }，[]})` 如果在`useEffect`的回调函数中返回了一个函数，那么这个函数会在组件卸载或者下一次 effect 执行前执行，用于清除之前的副作用操作。这种写法适用于需要进行清除操作的副作用，比如订阅、定时器等。
 
 ### 3.useContext
 
-在Hooks之前，react开发者都是使用class组件进行开发，父子组件之间通过props传值。但是现在开始使用方法组件开发，没有constructor构造函数，也就没有了props的接收，所以父子组件的传值就成了一个问题，于是就有了useContext。
+在 Hooks 之前，react 开发者都是使用 class 组件进行开发，父子组件之间通过 props 传值。但是现在开始使用方法组件开发，没有 constructor 构造函数，也就没有了 props 的接收，所以父子组件的传值就成了一个问题，于是就有了 useContext。
 
-**useContext基本使用可以分为固定的三步**
+**useContext 基本使用可以分为固定的三步**
 
-  1.根组件导入并调用createContext方法，得到Context对象，并导出
+1.根组件导入并调用 createContext 方法，得到 Context 对象，并导出
 
 ```jsx
-import { createContext } from 'react'
-export const Context = createContext()
+import { createContext } from 'react';
+export const Context = createContext();
 ```
 
 2.在根组件中使用 **Provider** 组件**包裹需要接收数据的后代组件**，并通过 **value** 属性提供要共享的数据
@@ -963,15 +958,15 @@ return (
 )
 ```
 
-  3.需要获取公共数据的后代组件：导入useContext,并按需导入根组件中导出的Context对象；调用useContext(第一步中导出的Context) 得到value的值
+3.需要获取公共数据的后代组件：导入 useContext,并按需导入根组件中导出的 Context 对象；调用 useContext(第一步中导出的 Context) 得到 value 的值
 
 ```jsx
-import React, { useContext } from 'react'
-import { Context } from './index'
+import React, { useContext } from 'react';
+import { Context } from './index';
 const 函数组件 = () => {
-    const 公共数据 = useContext(Context) // 这里的公共数据就是根组件value的值
-    return ( 函数组件的内容 )
-}
+  const 公共数据 = useContext(Context); // 这里的公共数据就是根组件value的值
+  return 函数组件的内容;
+};
 ```
 
 ### 4.useCallback
@@ -979,85 +974,80 @@ const 函数组件 = () => {
 在 React 开发中，性能优化一直是一个非常重要的话题。其中，防止不必要的渲染和函数对象的重复创建也是开发者需要关注的方面。而 useCallback 就是 React 提供的一个 Hook 函数，用来缓存回调函数，避免重复定义和重新渲染。它接受两个参数：回调函数和依赖数组。当依赖数组中的任何一个值发生变化时，useCallback 将会返回一个新的回调函数，否则将会返回之前缓存的回调函数。这样可以避免在每次渲染时都重新生成回调函数，从而提高组件的性能。
 
 ```jsx
-const memoizedCallback = useCallback(
-  () => {
-    // 回调函数的逻辑
-  },
-  [依赖项]
-);
+const memoizedCallback = useCallback(() => {
+  // 回调函数的逻辑
+}, [依赖项]);
 ```
 
-在这个例子中，memoizedCallback是一个缓存的回调函数，它只在依赖项发生改变时才会重新创建。依赖项是一个数组，当数组中的任何一个值发生改变时，memoizedCallback会重新创建。
+在这个例子中，memoizedCallback 是一个缓存的回调函数，它只在依赖项发生改变时才会重新创建。依赖项是一个数组，当数组中的任何一个值发生改变时，memoizedCallback 会重新创建。
 
 ### 5.useMemo
 
-当你需要对计算昂贵的值进行缓存，以便在依赖项没有改变时避免重复计算时，React的useMemo hook非常有用。它可以用来缓存一个值，以便在依赖项没有改变时，避免值的重新计算。
+当你需要对计算昂贵的值进行缓存，以便在依赖项没有改变时避免重复计算时，React 的 useMemo hook 非常有用。它可以用来缓存一个值，以便在依赖项没有改变时，避免值的重新计算。
 
 ```jsx
 //父组件
 function App() {
-  const [name, setName] = useState('名称')
-  const [content,setContent] = useState('内容')
+  const [name, setName] = useState('名称');
+  const [content, setContent] = useState('内容');
   return (
-      <>
-        <button onClick={() => setName(new Date().getTime())}>name</button>
-        <button onClick={() => setContent(new Date().getTime())}>content</button>
-        <Button name={name}>{content}</Button>
-      </>
-  )
+    <>
+      <button onClick={() => setName(new Date().getTime())}>name</button>
+      <button onClick={() => setContent(new Date().getTime())}>content</button>
+      <Button name={name}>{content}</Button>
+    </>
+  );
 }
 //子组件
 function Button({ name, children }) {
   function changeName(name) {
-    return name + '改变name的方法'
+    return name + '改变name的方法';
   }
-  const otherName =  changeName(name)
+  const otherName = changeName(name);
   return (
-      <>
-        <div>{otherName}</div>
-        <div>{children}</div>
-      </>
-
-  )
+    <>
+      <div>{otherName}</div>
+      <div>{children}</div>
+    </>
+  );
 }
 ```
 
-当我们点击父组件的按钮的时候，子组件的name和children都会发生变化。不管我们是改变name或者content的值，我们发现 changeName的方法都会被调用。是不是意味着 我们本来只想修改content的值，但是由于name并没有发生变化，所以无需执行对应的changeName方法。但是发现他却执行了。 这是不是就意味着性能的损耗，做了无用功。
+当我们点击父组件的按钮的时候，子组件的 name 和 children 都会发生变化。不管我们是改变 name 或者 content 的值，我们发现 changeName 的方法都会被调用。是不是意味着 我们本来只想修改 content 的值，但是由于 name 并没有发生变化，所以无需执行对应的 changeName 方法。但是发现他却执行了。 这是不是就意味着性能的损耗，做了无用功。
 
-下面我们使用useMemo进行优化
+下面我们使用 useMemo 进行优化
 
 ```jsx
-优化之后的子组件
+优化之后的子组件;
 function Button({ name, children }) {
   function changeName(name) {
-    console.log('11')
-    return name + '改变name的方法'
+    console.log('11');
+    return name + '改变name的方法';
   }
-const otherName =  useMemo(()=>changeName(name),[name])
+  const otherName = useMemo(() => changeName(name), [name]);
   return (
-      <>
-        <div>{otherName}</div>
-        <div>{children}</div>
-      </>
-
-  )
+    <>
+      <div>{otherName}</div>
+      <div>{children}</div>
+    </>
+  );
 }
 ```
 
-这个时候我们点击 改变content值的按钮，发现changeName 并没有被调用。但是点击改变name值按钮的时候，changeName被调用了。我们可以`使用useMemo方法 避免无用方法的调用`，当然一般我们changName里面可能会使用useState来改变state的值，那就避免了组件的二次渲染。达到了优化性能的目的
+这个时候我们点击 改变 content 值的按钮，发现 changeName 并没有被调用。但是点击改变 name 值按钮的时候，changeName 被调用了。我们可以`使用useMemo方法 避免无用方法的调用`，当然一般我们 changName 里面可能会使用 useState 来改变 state 的值，那就避免了组件的二次渲染。达到了优化性能的目的
 
 ### 6.useRef
 
-在react中，我们可以使用ref来获取组件示例或者DOM元素。
+在 react 中，我们可以使用 ref 来获取组件示例或者 DOM 元素。
 一般使用方法：
 
 ```jsx
 const App = memo(() => {
-  const title = useRef()
-  const inputREF = useRef()
+  const title = useRef();
+  const inputREF = useRef();
   function showtitle() {
-    console.dir(title.current)
-    inputREF.current.focus()  //点击输入框直接获取焦点
+    console.dir(title.current);
+    inputREF.current.focus(); //点击输入框直接获取焦点
   }
   return (
     <div>
@@ -1065,16 +1055,16 @@ const App = memo(() => {
       <input type="text" ref={inputREF} />
       <button onClick={showtitle}>查看title的DOM</button>
     </div>
-  )
-})
+  );
+});
 ```
 
 注意：
 
-1. useRef返回一个可变的 ref 对象，该对象只有个 current 属性，初始值为传入的参数( initialValue )；
+1. useRef 返回一个可变的 ref 对象，该对象只有个 current 属性，初始值为传入的参数( initialValue )；
 2. 返回的 ref 对象在组件的整个生命周期内保持不变，除非手动修改；
 3. 当更新 current 值时并不会 re-render ，这是与 useState 不同的地方；
-4. useRef也可以用来区分初始渲染还是更新(通过current有没值)；
+4. useRef 也可以用来区分初始渲染还是更新(通过 current 有没值)；
 
 ### 7.useLayoutEffect
 
@@ -1089,11 +1079,12 @@ const App = memo(() => {
 - 注意事项：
 
 ```html
-如果你使用服务端渲染：
-请记住，无论 useLayoutEffect() 还是 useEffect() 都无法在 Javascript 代码加载完成之前执行。
-这就是为什么在服务端渲染组件中引入 useLayoutEffect() 代码时会触发 React 告警。
-解决这个问题，需要将代码逻辑移至 useEffect() 中（如果首次渲染不需要这段逻辑的情况下），
-或是将该组件延迟到客户端渲染完成后再显示（如果直到 useLayoutEffect() 执行之前 HTML 都显示错乱的情况下）
+如果你使用服务端渲染： 请记住，无论 useLayoutEffect() 还是 useEffect() 都无法在
+Javascript 代码加载完成之前执行。 这就是为什么在服务端渲染组件中引入
+useLayoutEffect() 代码时会触发 React 告警。 解决这个问题，需要将代码逻辑移至
+useEffect() 中（如果首次渲染不需要这段逻辑的情况下），
+或是将该组件延迟到客户端渲染完成后再显示（如果直到 useLayoutEffect() 执行之前
+HTML 都显示错乱的情况下）
 ```
 
 - 解决方法：
@@ -1117,7 +1108,7 @@ function MyComponent() {
 }
 ```
 
-### 8.自定义Hooks
+### 8.自定义 Hooks
 
 自定义 Hooks 是一种用来封装可重用逻辑的方式，它是一个函数，名称以 “use” 开头，函数内部可以使用其他的 Hooks。通过自定义 Hooks，您可以将组件逻辑提取到可重用的函数中，使得逻辑的复用变得更加容易。
 
@@ -1132,7 +1123,7 @@ function useWindowWidth() {
     };
     window.addEventListener('resize', handleResize);
     return () => {
-    window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
   return width;
@@ -1145,12 +1136,11 @@ function MyComponent() {
   const width = useWindowWidth();
   return <div>Window width is: {width}</div>;
 }
-
 ```
 
 名为 `useWindowWidth` 的自定义 Hook。这个 Hook 使用了 `useState` 来存储窗口宽度的状态，并使用了 `useEffect` 来监听窗口大小的变化。通过这个自定义 Hook，我们可以在任何组件中获取窗口宽度，而不需要重复编写监听窗口大小变化的逻辑。
 
-### 9.redux中的hooks
+### 9.redux 中的 hooks
 
 `useDispatch` 和 `useSelector` 是 React-Redux 库中提供的两个 Hooks，用于在函数式组件中访问 Redux 中的状态和派发 action。
 
@@ -1165,9 +1155,7 @@ function MyComponent() {
   const handleButtonClick = () => {
     dispatch({ type: 'INCREMENT' });
   };
-  return (
-    <button onClick={handleButtonClick}>Increment</button>
-  );
+  return <button onClick={handleButtonClick}>Increment</button>;
 }
 ```
 
@@ -1179,16 +1167,14 @@ function MyComponent() {
 import { useSelector } from 'react-redux';
 
 function MyComponent() {
-  const count = useSelector(state => state.counter.count);
-  return (
-    <div>Count: {count}</div>
-  );
+  const count = useSelector((state) => state.counter.count);
+  return <div>Count: {count}</div>;
 }
 ```
 
-### 10.useID的使用
+### 10.useID 的使用
 
-有时需要为元素生成唯一的ID。这种情况经常出现在表单元素、标签和用于无障碍性的目的上。React提供了一个名为`useId`的自定义Hook，它可以帮助我们生成唯一的ID。
+有时需要为元素生成唯一的 ID。这种情况经常出现在表单元素、标签和用于无障碍性的目的上。React 提供了一个名为`useId`的自定义 Hook，它可以帮助我们生成唯一的 ID。
 
 ```jsx
 import { useId } from 'react';
@@ -1203,10 +1189,10 @@ function MyComponent() {
 }
 ```
 
-**如果您想要为生成的ID添加前缀，可以在 `useId` 中传入一个字符串作为参数。例如：**
+**如果您想要为生成的 ID 添加前缀，可以在 `useId` 中传入一个字符串作为参数。例如：**
 
 ```jsx
-const uniqueId = useId('my-prefix')
+const uniqueId = useId('my-prefix');
 ```
 
 ### 11.useDeferredValue
@@ -1241,64 +1227,61 @@ function MyComponent() {
 
 #### **介绍**
 
-1. redux是一个专门用于做`状态管理`的JS库`(不是react插件库)`。
+1. redux 是一个专门用于做`状态管理`的 JS 库`(不是react插件库)`。
 2. 它可以用在`react, angular, vue`等项目中, 但`基本与react配合使用`。
-3. 作用: 集中式管理react应用中`多个组件共享的状态`。
+3. 作用: 集中式管理 react 应用中`多个组件共享的状态`。
 
-#### **什么情况下需要使用redux**
+#### **什么情况下需要使用 redux**
 
 1. 某个组件的状态，需要让其他组件可以`随时拿到（共享）`。
 2. 一个组件需要改变另一个组件的状态（`通信`）。
 3. 总体原则：`能不用就不用`, 如果不用`比较吃力才考虑使用`。
 
-#### redux的三个核心概念
+#### redux 的三个核心概念
 
 **1，action**
- action理解为动作，action的值一般为一个对象，格式如 { type: "", data: "" }，type是必须要的，因为reducer处理数据的时候要根据不同的type来进行不同的操作。
-**2，reducer**
-   1.用于初始化状态、加工状态。  
-   2.加工时，根据旧的state和action， 产生新的state的纯函数。
+action 理解为动作，action 的值一般为一个对象，格式如 { type: "", data: "" }，type 是必须要的，因为 reducer 处理数据的时候要根据不同的 type 来进行不同的操作。
+**2，reducer** 1.用于初始化状态、加工状态。  
+ 2.加工时，根据旧的 state 和 action， 产生新的 state 的纯函数。
 **3，store**
 
-store是一个仓库，用来存储数据，它可以获取数据，也可以派发数据，还能监听到数据的变化。在redux中，只有一个store，所有的需要管理的数据都保存在这个store里面，但是不能直接改变store，需要通过返回的一个新store更改它 
+store 是一个仓库，用来存储数据，它可以获取数据，也可以派发数据，还能监听到数据的变化。在 redux 中，只有一个 store，所有的需要管理的数据都保存在这个 store 里面，但是不能直接改变 store，需要通过返回的一个新 store 更改它
 
-**store.getState() *拿到store中保存的数据***
+**store.getState() _拿到 store 中保存的数据_**
 
-**store.dispatch()派发action修改内容**
+**store.dispatch()派发 action 修改内容**
 
-**subscribe(listener): 注册监听, 当产生了新的state时, 自动调用**
+**subscribe(listener): 注册监听, 当产生了新的 state 时, 自动调用**
 
-#### redux的核心API
+#### redux 的核心 API
 
 **1，createstore()**
 
-作用：创建包含指定reducer的store对象
+作用：创建包含指定 reducer 的 store 对象
 
-**2，store对象**
+**2，store 对象**
 
-1. 作用: redux库最核心的管理对象
-2. 它内部维护着: state   和 reducer
-3. 核心方法:getState()    dispatch(action)     subscribe(listener)
+1. 作用: redux 库最核心的管理对象
+2. 它内部维护着: state 和 reducer
+3. 核心方法:getState() dispatch(action) subscribe(listener)
 
 **3，applyMiddleware()**
 
-作用：应用上基于redux的中间件(插件库)
+作用：应用上基于 redux 的中间件(插件库)
 
 **4，combineReducers()**
 
-作用：合并多个reducer函数
+作用：合并多个 reducer 函数
 
 ```jsx
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
-import counterReducer from './counter/reducer'
-import homeReducer from './home/reducer'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import counterReducer from './counter/reducer';
+import homeReducer from './home/reducer';
 const reducer = combineReducers({
   counter: counterReducer,
   home: homeReducer,
-})
+});
 ```
-
-
 
 ### 使用
 
@@ -1308,9 +1291,9 @@ const reducer = combineReducers({
 npm install redux react-redux
 ```
 
-**2.src路径下，新建store文件**
+**2.src 路径下，新建 store 文件**
 
-**3.新建src / store / index.js**
+**3.新建 src / store / index.js**
 
 ```react
 import { createStore } from 'redux'
@@ -1338,17 +1321,15 @@ export const store = createStore(reducer)
 4.创建 store 后，便可以在 React 组件中使用它。 在 src/index.js 中引入我们刚刚创建的 store , 通过 React-Redux 的 `<Provider>`将 `<App>` 包裹起来,并将 store 作为 prop 传入。
 
 ```jsx
-import store from './store'
+import store from './store';
 root.render(
   <Provider store={store}>
     <App />
-  </Provider>
-)
+  </Provider>,
+);
 ```
 
-
-
-##### 派发action
+##### 派发 action
 
 ```react
 import { store } from './store'
@@ -1373,7 +1354,7 @@ unsubscribe() //取消订阅
 
 ## react-ToolKit
 
- Redux工具包，简称RTK。RTK可以帮助我们处理使用Redux过程中的重复性工作，简化Redux中的各种操作， [官方文档](https://cn.redux.js.org/introduction/getting-started)
+Redux 工具包，简称 RTK。RTK 可以帮助我们处理使用 Redux 过程中的重复性工作，简化 Redux 中的各种操作， [官方文档](https://cn.redux.js.org/introduction/getting-started)
 
 ### **使用**
 
@@ -1386,30 +1367,30 @@ npm install @reduxjs/toolkit
 yarn add @reduxjs/toolkit
 ```
 
-**configureStore** 他的作用跟以前的createStore是一样的但是它集成了很多的东西。他有三个参数
+**configureStore** 他的作用跟以前的 createStore 是一样的但是它集成了很多的东西。他有三个参数
 
 ```jsx
-import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from '../counterSlice/index'
+import { configureStore } from '@reduxjs/toolkit';
+import counterReducer from '../counterSlice/index';
 const store = configureStore(
   //reducer: 将slice中的reducer可以组成一个对象传入此处;
   //middleware:可以使用参数，传入其他的中间件(自行了解); 默认集成了redux-thunk
   //devTools:是否配置devTools工具，默认为true;
   {
-    reducer:{
-     counter:counterReducer
+    reducer: {
+      counter: counterReducer,
     },
- }
-)
-export default store
+  },
+);
+export default store;
 ```
 
-**createSlice**，他的作用跟以前的reducer差不多 他只能做同步操作，异步操作需要使用**createAsyncThunk**
+**createSlice**，他的作用跟以前的 reducer 差不多 他只能做同步操作，异步操作需要使用**createAsyncThunk**
 
 **1.创建 Redux State Slice**
 
 ```jsx
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const counterSlice = createSlice({
   name: 'counter', // 浏览器Redux插件的名词
@@ -1418,32 +1399,31 @@ const counterSlice = createSlice({
   },
   reducers: {
     addNuber(state, { payload }) {
-      state.counter = state.counter + payload
+      state.counter = state.counter + payload;
     },
     subNuber(state, { payload }) {
-      state.counter = state.counter - payload
+      state.counter = state.counter - payload;
     },
   },
-})
+});
 // 每个 case reducer 函数会生成对应的 Action creators
-export const { addNuber, subNuber } = counterSlice.actions
-export default counterSlice.reducer
+export const { addNuber, subNuber } = counterSlice.actions;
+export default counterSlice.reducer;
 ```
 
 **2.将 Slice Reducers 添加到 Store 中**
 
 ```jsx
-import { configureStore } from '@reduxjs/toolkit'
-import couterReducer from './features/counter'
-import homeReducer from './features/home'
+import { configureStore } from '@reduxjs/toolkit';
+import couterReducer from './features/counter';
+import homeReducer from './features/home';
 const store = configureStore({
   reducer: {
     counter: couterReducer,
     home: homeReducer,
   },
-})
-export default store
-
+});
+export default store;
 ```
 
 **3.使用**
@@ -1451,73 +1431,75 @@ export default store
 **1.类组件使用**
 
 ```jsx
-import React, { PureComponent } from 'react'
-import { connect } from 'react-redux'
-import { addNuber } from '../store/features/counter'
-import { fetchHomeMultidataAction } from '../store/features/home'
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import { addNuber } from '../store/features/counter';
+import { fetchHomeMultidataAction } from '../store/features/home';
 export class Home extends PureComponent {
   componentDidMount() {
-   this.props.fetchHomeMultidata() 
+    this.props.fetchHomeMultidata();
   }
   addNuber(nub) {
-    this.props.addNuber(nub)
+    this.props.addNuber(nub);
   }
   render() {
-    const { counter } = this.props
+    const { counter } = this.props;
     return (
       <div>
         <h2>Home:Counter:{counter}</h2>
         <button onClick={(e) => this.addNuber(5)}>+5</button>
         <button onClick={(e) => this.addNuber(8)}>+8</button>
       </div>
-    )
+    );
   }
 }
-export default Home
+export default Home;
 ```
 
 **2.函数式组件使用**
 
 ```jsx
-import { useSelector,useDispatch } from "react-redux"
-import { setName,setAge } from "./store"
+import { useSelector, useDispatch } from 'react-redux';
+import { setName, setAge } from './store';
 const App = () => {
   // useSelector() 用来加载state中的数据
-  const student = useSelector(state => state.student)
+  const student = useSelector((state) => state.student);
   // 通过useDispatch() 来获取派发器对象
-  const dispatch = useDispatch()
-  const changeName = () =>{ 
-    dispatch(setName())
-  }
-  const changeAge = () =>{ 
-    dispatch(setAge())    
-  }
+  const dispatch = useDispatch();
+  const changeName = () => {
+    dispatch(setName());
+  };
+  const changeAge = () => {
+    dispatch(setAge());
+  };
   return (
     <div>
-      <p>{student.name}--{student.age}--{student.gender}--{student.address}</p>
+      <p>
+        {student.name}--{student.age}--{student.gender}--{student.address}
+      </p>
       <button onClick={changeName}>修改名字</button>
       <button onClick={changeAge}>修改年龄</button>
     </div>
-  )
-}
-export default App
+  );
+};
+export default App;
 ```
 
-#### createAsyncThunk异步
+#### createAsyncThunk 异步
 
-`createAsyncThunk`是Redux Toolkit中用于创建异步Action的函数。它的作用是简化异步操作的处理，包括发送网络请求、处理异步操作的状态等。使用`createAsyncThunk`可以帮助开发者更方便地管理异步操作，避免了编写大量的重复代码。
+`createAsyncThunk`是 Redux Toolkit 中用于创建异步 Action 的函数。它的作用是简化异步操作的处理，包括发送网络请求、处理异步操作的状态等。使用`createAsyncThunk`可以帮助开发者更方便地管理异步操作，避免了编写大量的重复代码。
 
 `createAsyncThunk`的使用方式如下：
 
 ```jsx
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const myAsyncThunk = createAsyncThunk(
   /**
    * 一个字符串类型的 action 名称，用于在 Redux 中识别该 action。
    * 该名称通常包含操作名称和状态
    *  */
-  "myAsyncOperationStatus",
+  'myAsyncOperationStatus',
   /**
    * 异步操作函数，该函数接收两个参数
    * 第一个参数是 thunk 的 payload，也就是调用的时候传过来的
@@ -1528,129 +1510,132 @@ const myAsyncThunk = createAsyncThunk(
    * 用于获取当前 Redux store 中的 state 的函数
    * extra
    * 性是用于传递额外参数的对象
-   * 
+   *
    */
   async (arg, { dispatch, getState, extra }) => {
     // 异步操作函数，必须返回一个 Promise
-    const response = await fetch("https://example.com/api/someEndpoint");
+    const response = await fetch('https://example.com/api/someEndpoint');
     return response.json();
   },
-  {} // 可选的配置项
+  {}, // 可选的配置项
 );
-
 ```
 
+#### RTK 代码模块化\*\*
 
+因为 state 的数据可能不止一种，将每一种数据都存放在 store 的一个文件中就会显得代码特别的臃肿，后期难以维护，为了便于今后的管理，可以对 RTK 代码进行模块化划分，也就是说，每一个数据都有单独的文件，最后所有的文件都整合到 store 文件夹下的 index 文件中，如下：
 
-#### RTK代码模块化**
-
-因为state的数据可能不止一种，将每一种数据都存放在store的一个文件中就会显得代码特别的臃肿，后期难以维护，为了便于今后的管理，可以对RTK代码进行模块化划分，也就是说，每一个数据都有单独的文件，最后所有的文件都整合到store文件夹下的index文件中，如下：
-
-将我设置好的两个store数据单独抽离出去：
+将我设置好的两个 store 数据单独抽离出去：
 
 ```jsx
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 // 创建学生切片
-const stuSlice = createSlice({ // 需要一个配置对象作为参数，通过对象的不同属性来指定它的配置
-  name:'stu', // 用来自动生成 action 中的 type
-  initialState:{ // state的初始值
-    name:"张三",
-    age:18,
-    gender:"男",
-    address:"北京"
+const stuSlice = createSlice({
+  // 需要一个配置对象作为参数，通过对象的不同属性来指定它的配置
+  name: 'stu', // 用来自动生成 action 中的 type
+  initialState: {
+    // state的初始值
+    name: '张三',
+    age: 18,
+    gender: '男',
+    address: '北京',
   },
   // 指定state的各种操作，直接在对象中添加方法
-  reducers:{
-    setName: (state,action) => { // state是一个代理对象，可直接修改
-      state.name = action.payload
+  reducers: {
+    setName: (state, action) => {
+      // state是一个代理对象，可直接修改
+      state.name = action.payload;
     },
-    setAge: (state,action) => {
-      state.age = action.payload
-    }
-  }
-})
+    setAge: (state, action) => {
+      state.age = action.payload;
+    },
+  },
+});
 // 切片对象会自动的帮助我们生成action
-export const { setName,setAge } = stuSlice.actions
-export const { reducer:stuReducer } = stuSlice
+export const { setName, setAge } = stuSlice.actions;
+export const { reducer: stuReducer } = stuSlice;
 ```
 
 ```jsx
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 // 创建学校切片
 const schoolSlice = createSlice({
-  name:"school",
-  initialState:{
-    name:'北京大学',
-    address:'北京市',
+  name: 'school',
+  initialState: {
+    name: '北京大学',
+    address: '北京市',
   },
-  reducers:{
-    setName: (state,action) => {
-      state.name = action.payload
+  reducers: {
+    setName: (state, action) => {
+      state.name = action.payload;
     },
-    setAddress: (state,action) => {
-      state.address = action.payload
-    }
-  }
-})
-export const { setName,setAddress } = schoolSlice.actions
-export const { reducer:schoolReducers  } = schoolSlice
+    setAddress: (state, action) => {
+      state.address = action.payload;
+    },
+  },
+});
+export const { setName, setAddress } = schoolSlice.actions;
+export const { reducer: schoolReducers } = schoolSlice;
 ```
 
-将抽离出去的数据都存放在store文件夹下的index.jsx文件中，如下：
+将抽离出去的数据都存放在 store 文件夹下的 index.jsx 文件中，如下：
 
 ```jsx
 // 使用RTK创建store,用于管理所有数据的文件
-import { configureStore } from "@reduxjs/toolkit"; 
-import { stuReducer } from "./student";
-import { schoolReducers } from "./school";
- 
+import { configureStore } from '@reduxjs/toolkit';
+import { stuReducer } from './student';
+import { schoolReducers } from './school';
+
 // 创建store，用来创建store对象，需要一个配置对象作为参数
 const store = configureStore({
-  reducer:{
-    student:stuReducer,
-    school:schoolReducers
-  }
-})
-export default store
+  reducer: {
+    student: stuReducer,
+    school: schoolReducers,
+  },
+});
+export default store;
 ```
 
-在相关组件中调用该store中的数据：
+在相关组件中调用该 store 中的数据：
 
 ```jsx
-import { useSelector,useDispatch } from "react-redux"
-import { setName,setAge } from "./store/student"
-import { setAddress,setName as setSchoolName } from "./store/school"
- 
+import { useSelector, useDispatch } from 'react-redux';
+import { setName, setAge } from './store/student';
+import { setAddress, setName as setSchoolName } from './store/school';
+
 const App = () => {
   // useSelector() 用来加载state中的数据
-  const { student,school } = useSelector(state => state)
+  const { student, school } = useSelector((state) => state);
   // 通过useDispatch() 来获取派发器对象
-  const dispatch = useDispatch()
-  const changeName = () =>{ 
-    dispatch(setName("王五"))
-  }
-  const changeAge = () =>{ 
-    dispatch(setAge(30))    
-  }
-  const changeSchoolName = () =>{ 
-    dispatch(setSchoolName("五道口职业技术学院"))
-  }
-  const changeSchoolAddress = () =>{ 
-    dispatch(setAddress("海淀区"))
-  }
+  const dispatch = useDispatch();
+  const changeName = () => {
+    dispatch(setName('王五'));
+  };
+  const changeAge = () => {
+    dispatch(setAge(30));
+  };
+  const changeSchoolName = () => {
+    dispatch(setSchoolName('五道口职业技术学院'));
+  };
+  const changeSchoolAddress = () => {
+    dispatch(setAddress('海淀区'));
+  };
   return (
     <div>
       <h2>个人信息：</h2>
-      <p>{student.name}--{student.age}--{student.gender}--{student.address}</p>
+      <p>
+        {student.name}--{student.age}--{student.gender}--{student.address}
+      </p>
       <button onClick={changeName}>修改个人名字</button>
       <button onClick={changeAge}>修改个人年龄</button>
       <h2>学校信息：</h2>
-      <p>{school.name}--{school.address}</p>
+      <p>
+        {school.name}--{school.address}
+      </p>
       <button onClick={changeSchoolName}>修改学校名字</button>
       <button onClick={changeSchoolAddress}>修改学校地址</button>
     </div>
-  )
-}
-export default App
+  );
+};
+export default App;
 ```
-

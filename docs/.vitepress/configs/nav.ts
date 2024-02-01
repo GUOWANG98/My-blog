@@ -9,9 +9,9 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
    },
    {
-    text:'css相关',
+    // text:'css相关',
     items:[
-      {text:'VitePress',link:'/note/'},{text:'Vue',link:'/note/'},{text:'React',link:'/note/'},{text:'Uni-App',link:'/note/'}
+      {text:'Mock数据',link:'/note/mock/'},{text:'Git常用命令',link:'/note/Git/'},{text:'Day.js使用技巧',link:'/note/dayjs/'},{text:'npm常用命令',link:'/note/npm/'}
     ]
    }
   ]},

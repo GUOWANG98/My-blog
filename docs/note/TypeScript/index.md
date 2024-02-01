@@ -1,11 +1,10 @@
 ---
-layoutClass: m-nav-layout
-# outline: [2, 3, 4]
+prev:
+  text: 'Uni-App基础入门'
+  link: '/note/Uni-App/'
 ---
 
-<style src="../index.scss"></style>
-
-# TypeScript 基础
+# TypeScript 基础入门
 
 - TypeScript 是 JS 的超集，TS 提供了 JS 的所有功能，并且额外的增加了：**类型系统**
 - 所有的 JS 代码都是 TS 代码

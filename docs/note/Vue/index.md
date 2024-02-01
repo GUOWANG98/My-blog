@@ -1,13 +1,17 @@
 ---
-layoutClass: m-nav-layout
-# outline: [2, 3, 4]
+prev:
+  text: 'VitePress打造个人博客'
+  link: '/note/VitePress/'
+next:
+  text: 'React基础入门'
+  link: '/note/React/'
 ---
 
-<style src="../index.scss"></style>
-
-# 前言
+# Vue3 入门笔记
 
 Vue 3 是一个流行的开源[JavaScript 框架](https://so.csdn.net/so/search?q=JavaScript%E6%A1%86%E6%9E%B6&spm=1001.2101.3001.7020)，用于构建用户界面和单页面应用。它带来了许多新特性和改进，包括更好的性能、更小的打包大小、更好的 TypeScript 支持、全新的组合式 API，以及一些新的内置组件。
+
+---
 
 **1.Vue 3 的新特性**
 

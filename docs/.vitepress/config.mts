@@ -11,6 +11,7 @@ export default defineConfig({
   themeConfig: {
     outlineTitle:'文章目录',
     outline:[2,6],
+
     // https://vitepress.dev/reference/default-theme-config
     // logo: 'logo.png',
     // 导航栏数据
@@ -41,36 +42,37 @@ export default defineConfig({
     nav,
     sidebar: {
       // 当用户在 `map` 目录页面下将会展示这个侧边栏，没有写就不展示
-      // '/note/': [
-      //   {
-      //     text: 'JavaScript 基础知识',
-          
-      //     items: [
-      //       // This shows `/guide/index.md` page.
-      //       { text: 'Index', link: '/guide/' }, // /guide/index.md
-      //       { text: 'One', link: '/guide/one' }, // /guide/one.md
-      //       { text: 'Two', link: '/guide/two' } // /guide/two.md
-      //     ]
-      //   },
-      //   {
-      //     text: 'JavaScript 基础知识',
-      //     items: [
-      //       // This shows `/guide/index.md` page.
-      //       { text: 'Index', link: '/guide/' }, // /guide/index.md
-      //       { text: 'One', link: '/guide/one' }, // /guide/one.md
-      //       { text: 'Two', link: '/guide/two' } // /guide/two.md
-      //     ]
-      //   },
-      //   {
-      //     text: 'JavaScript 基础知识',
-      //     items: [
-      //       // This shows `/guide/index.md` page.
-      //       { text: 'Index', link: '/guide/' }, // /guide/index.md
-      //       { text: 'One', link: '/guide/one' }, // /guide/one.md
-      //       { text: 'Two', link: '/guide/two' } // /guide/two.md
-      //     ]
-      //   }
-      // ],
+      '/note/': [
+        {
+          text: '前端框架',
+          collapsed: false, // 是否可折叠
+          items: [
+            { text: 'Vue基础入门', link: '/note/Vue/' },
+            { text: 'React基础入门', link: '/note/React/' },
+            { text: 'Uni-App基础入门', link: '/note/Uni-App/' },
+          ]
+        },
+        {
+          text: '常用命令行工具',
+          collapsed: false, // 是否可折叠
+          items: [
+            { text: 'Git相关', link: '/note/Git/' },
+            { text: 'npm相关', link: '/note/npm/' },
+          ]
+        },
+        {
+          text: '常用库的使用与配置',
+          collapsed: false, // 是否可折叠
+          items: [
+            { text: 'Day.js', link: '/note/dayjs/' },
+            { text: 'Mock', link: '/note/mock/' },
+          ]
+        }
+      ],
+    },
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/GUOWANG98' }
