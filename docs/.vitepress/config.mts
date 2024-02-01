@@ -2,6 +2,12 @@ import { defineConfig } from 'vitepress'
 import { nav, sidebar } from './configs'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  markdown: {
+    image: {
+      // 默认禁用图片懒加载
+      lazyLoading: true
+    }
+  },
   outDir: '../dist',
   base: "/My-blog/",
     // 打包输出目录
@@ -11,7 +17,6 @@ export default defineConfig({
   themeConfig: {
     outlineTitle:'文章目录',
     outline:[2,6],
-
     // https://vitepress.dev/reference/default-theme-config
     // logo: 'logo.png',
     // 导航栏数据
