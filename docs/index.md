@@ -26,7 +26,7 @@ features:
   - icon: 🐞
     title: React
     details: React18笔记整理
-    link: /pit/npm
+    link: /note/React/
     linkText: 入门笔记
   - icon: 🥇
     title: <br />面对疾风吧！🌪🌪🌪🌪🌪
